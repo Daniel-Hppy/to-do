@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 25vw 75vw;
+    grid-template-rows: 10vh 90vh;
+}
+
+/*========HEADER=========*/
+.header {
+display: grid;
+grid-template-columns: 60vw 15vw;
+grid-column: 2 / 3;
+align-items: center;
+border-bottom: 1px solid rgb(216, 216, 216, 0.3);
+}
+
+.task-type {
+    margin-left: 25px;
+}
+
+.show-modal {
+    color: white;
+    border: none;
+    background-color: rgb(100, 100, 230);
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 50px;
+    gap: 3px;
+    border-radius: 1em;
+}
+
+.show-modal svg{
+    height: 2em;
+    width: 2em;
+}
+
+/*========SIDEBAR=========*/
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    grid-row: 1 / 3;
+}
+
+.logo {
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: rgb(100, 100, 230);
+}
+
+.category{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background-color: white;
+    width: 23vw;
+    height: 50px;
+    margin-left: 1vw;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: rgb(172, 162, 162);
+    fill: rgb(172, 162, 162);
+}
+
+.category svg{
+    height: 1.2em;
+    width: 1.2em;
+    margin: 20px;
+}
+
+.category:hover {
+    background-color: rgb(137, 137, 137, 0.1);
+    color: black;
+    fill: black;
+}
+
+.category.active{
+    background-color: rgb(100, 100, 230, 0.3);
+    color:  rgb(100, 100, 230);
+    fill: rgb(100, 100, 230);;
+}
+
+/*========CONTENT=========*/
+
+.task-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100vh;
+    background-color: rgb(228, 227, 227, 0.3);
+}
+
+.task-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+    border: 1px solid;
+    border-radius: 2em;
+    background-color: white;
+}
+
+.task-item h1 {
+    align-self: center;
+    grid-column: 1/3;
+    margin: 10px 20px;
+}
+
+.task-item .description-container {
+    margin-left: 5px;
+    grid-column: 1/3;
+}
+
+.description-container p:first-child{
+    font-weight: 700;
+}
+
+.task-item p {
+    margin-left: 10px;
+}
+
+.task-item p:nth-child(4){
+    font-weight: 700;
+}
+
+.task-item .card-button{
+    grid-column: 1/3;
+    justify-self: end;
+}
+
+.task-item .btn-container{
+    display: flex;
+    grid-column: 1/3;
+    margin-right: 20px;
+    justify-content: end;
+}
+
+.task-item button{
+    height: 3em;
+    width: 3em;
+    border: none;
+    background-color: white;
+    margin: 3px;
+}
+
+button:hover{
+    fill:  rgb(100, 100, 230);
+}
+
+.delete-btn svg{
+    height: 3em;
+    width: 3em;
+}
+
+/*=======MODAL======*/
+dialog {
+    border: 1px solid black;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+dialog input,
+dialog textarea,
+dialog select {
+    padding: 10px;
+    font-size: 14px;
+}
+
+dialog .description {
+    min-height: 80px;
+}
+
+dialog .add-task,
+dialog .cancel {
+    padding: 10px;
+    cursor: pointer;
+}
